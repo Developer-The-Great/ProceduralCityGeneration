@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &155510035193763198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155510035193763192}
+  - component: {fileID: 155510035193763199}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Architecture
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &155510035193763192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155510035193763198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &155510035193763199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155510035193763198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1627e16474597247badede8eee57294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perUnitMultiplier: 3
+  NeoMilitarismChoices:
+  - {fileID: 2634799512205002611, guid: 46985276744749f42b0b66b3cbf34740, type: 3}
+  - {fileID: 6828621623883001495, guid: 2364f9379309c20428e2015ab1834572, type: 3}
+  - {fileID: 5224195675344885212, guid: f5627b9f183ca32498099ec9366dcf3c, type: 3}
+  - {fileID: 9032132645868129880, guid: 9d791a422a807a941b0026218777bdf0, type: 3}
+  - {fileID: 9032132645868129880, guid: 9d791a422a807a941b0026218777bdf0, type: 3}
+  - {fileID: 9032132645868129880, guid: 9d791a422a807a941b0026218777bdf0, type: 3}
+  - {fileID: 9032132645868129880, guid: 9d791a422a807a941b0026218777bdf0, type: 3}
+  - {fileID: 9032132645868129880, guid: 9d791a422a807a941b0026218777bdf0, type: 3}
+  NeoKitschMansionChoices:
+  - {fileID: 2571956255296782392, guid: 7b3d92579a79bf74ea8467b3df887d77, type: 3}
+  - {fileID: 2571956255296782392, guid: 3b0cbae9534e3d042b52693733fcc36f, type: 3}
+  KitschChoices:
+  - {fileID: 2680219534411008229, guid: e90d184c0135b9c419dc15dc10e707a9, type: 3}
+  - {fileID: 4413762286204851203, guid: 54b5e034e89d2354984f3b4781a2aa95, type: 3}
+  - {fileID: 7412973737555435561, guid: e417be31e87c8b1428cbe8dbb0f38e66, type: 3}
+  - {fileID: 4560908911952307098, guid: 83d76ecb8433ad04e817f6fda6e6fbe6, type: 3}
+  - {fileID: 8044313820037232975, guid: b383d35e9ab78a74b8481149fc2694ab, type: 3}
+  - {fileID: 6871330369635011751, guid: 5c7bb2799b00fd149a9c90b2dac3d4b0, type: 3}
+  - {fileID: 3924519916740397596, guid: b75c313f1e5f0644cae6a91f5f3180c5, type: 3}
+  - {fileID: 7087097470264872531, guid: 8ffae1613f4663041aa4ed9873673ac5, type: 3}
+  EntropismChoices:
+  - {fileID: 2548295244435915298, guid: 5a71c6e55a2b40d42917d9d9d093efd7, type: 3}
+  - {fileID: 2262779321816426889, guid: 2e2fe3906112aaf4fa5519c15390decd, type: 3}
+  - {fileID: 5125333380306051368, guid: ea9b6e1d025bd5540afcb6f5d347f1a5, type: 3}
+  - {fileID: 1238481545382109168, guid: 3eacc77b14e9a794f9f7c05ff600629f, type: 3}
+  - {fileID: 1829553511324358482, guid: b4504d645bbfddc40b23e49cdbaa9e1f, type: 3}
+  - {fileID: 2739298643737547828, guid: f7c5014677a685242a7b22344479d962, type: 3}
+  - {fileID: 7087097470264872531, guid: 58e0bb146353b864f97b0ffedc7636df, type: 3}
+  NeoKitschSkyscraper:
+  - {fileID: 611925979889589252, guid: 50b33c6ae9ebb3649b77e0fcb359431e, type: 3}
+  - {fileID: 7100456969458545776, guid: 8de83bfe1d0e49a48a826273cc3180b9, type: 3}
+  - {fileID: 1466646362683387867, guid: cb7c0ff2ab0985944861db7adbc807bb, type: 3}
+  - {fileID: 8279438649155073359, guid: c7c5b0b1a345e434b9367db01daae1ce, type: 3}
+  - {fileID: 8279438649155073359, guid: c7c5b0b1a345e434b9367db01daae1ce, type: 3}
+  - {fileID: 7066214538764068400, guid: 4fbd2dcf7076d9d4caf7475e905b6808, type: 3}
+  - {fileID: 7066214538764068400, guid: 4fbd2dcf7076d9d4caf7475e905b6808, type: 3}
+  - {fileID: 6728333540723276591, guid: 8b0c3b47aea75364c8e7ea7978c993c5, type: 3}
+  NeoMilitarismBuildingHeight: 080000001e000000
+  NeoKitschMansionBuildingHeight: 0200000019000000
+  KitschBuildingHeight: 0300000006000000
+  EntropismBuildingHeight: 0200000005000000
+  NeoMilitarismMinUnitSize: {x: 6, y: 6}
+  NeoMilitarismMaxUnitSize: {x: 8, y: 8}
+  NeoKitschMinUnitSize: {x: 6, y: 6}
+  NeoKitscMaxUnitSize: {x: 15, y: 15}
+  KitschMinUnitSize: {x: 5, y: 5}
+  KitschMaxUnitSize: {x: 8, y: 8}
+  EntropismMinUnitSize: {x: 5, y: 5}
+  EntropismMaxUnitSize: {x: 8, y: 8}
+  roadTexture: {fileID: 8300101660443950311, guid: 7959f360cec497e4e8478bc286fd56aa,
+    type: 3}
+  groundTexture: {fileID: 4472834150881472367, guid: 3f9a181a41c89fc429ff6297471fe036,
+    type: 3}
