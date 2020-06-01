@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\C4\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\C4\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_TightCity.1200497238.00" t="ExcludeRecursive" />
+    <e p="C:\Users\C4\Documents\tightcityproceduralgeneration\TightCity" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Grid.cs" t="Include" />
+        <e p="MeshVersions.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="ArchitecturalStylesArray.cs" t="Include" />
+          <e p="BuildArea2D.cs" t="Include" />
+          <e p="BuildingGenerator.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="Debug" t="Include">
+            <e p="DirectionDisplayer.cs" t="Include" />
+            <e p="MeshVertexDisplayer.cs" t="Include" />
+          </e>
+          <e p="EntropismBuildingStrategy.cs" t="Include" />
+          <e p="KitschBuildingStrategy.cs" t="Include" />
+          <e p="NeoKitschMansionBuildingStrategy.cs" t="Include" />
+          <e p="NeoMilitaristBuildingStrategy.cs" t="Include" />
+          <e p="Shape2D.cs" t="Include" />
+          <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Square2D.cs" t="Include" />
+          <e p="Utils.cs" t="Include" />
+        </e>
+        <e p="TutorialInfo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReadmeEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="TightCity.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
