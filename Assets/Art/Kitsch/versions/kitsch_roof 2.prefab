@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8044313820037232975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8044313820037232974}
+  - component: {fileID: 4552024443439397614}
+  m_Layer: 0
+  m_Name: kitsch_roof 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8044313820037232974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044313820037232975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9074717274786525873}
+  - {fileID: 6505240384650815372}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &4552024443439397614
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8044313820037232975}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 1.5103552, y: 0.50000024, z: 1.5278711}
+  m_Size: 3.0259695
+  m_FadeMode: 2
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.50364333
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3270710823447250076, guid: 83be5f7b8342d204e8bd932651414ec4,
+        type: 3}
+  - screenRelativeHeight: 0.003299919
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5590672180815145297, guid: 83be5f7b8342d204e8bd932651414ec4,
+        type: 3}
+  m_Enabled: 1
+--- !u!1001 &145131313086898612
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8044313820037232974}
+    m_Modifications:
+    - target: {fileID: 5311743671488618774, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_Name
+      value: kitsch_roof_edge_02_LOD0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311743671488618774, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a55ac86fe4ccd1643aba040a44b35cdf, type: 3}
+--- !u!4 &9074717274786525873 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9217816621657412357, guid: a55ac86fe4ccd1643aba040a44b35cdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 145131313086898612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6693369905336999262
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8044313820037232974}
+    m_Modifications:
+    - target: {fileID: 3530742970063194305, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_Name
+      value: kitsch_roof_edge_02_LOD1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3530742970063194305, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ba09236b8e99a24588b4af2f595c868, type: 3}
+--- !u!4 &6505240384650815372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 478755806763154130, guid: 7ba09236b8e99a24588b4af2f595c868,
+    type: 3}
+  m_PrefabInstance: {fileID: 6693369905336999262}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7066214538764068400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987390224467308285}
+  - component: {fileID: 2839572378409496907}
+  - component: {fileID: -1762483663569111674}
+  m_Layer: 0
+  m_Name: neok_billboard_1x15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987390224467308285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066214538764068400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4396209432495847760}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2839572378409496907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066214538764068400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0236d16f9dd08bd4e85c7cc85f179a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  versions:
+  - {fileID: 7066214538764068400, guid: f90705ca9a2155d4e9b4d43a7881e82d, type: 3}
+  - {fileID: 1583037323923465092, guid: ad0c58a04ae7c3f439143256eaaf36ad, type: 3}
+  - {fileID: 5657114235726436800, guid: 30a323ed4a95610479d4cf4c8557f9d2, type: 3}
+  - {fileID: 7728624919470091324, guid: 4ecc12a5f6c08c941a5f9a9a16d90619, type: 3}
+--- !u!114 &-1762483663569111674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7066214538764068400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adbcea50d5211d4ab564ecd14bc5781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AddSizes:
+  - {x: 1, y: 15}
+  - {x: 4, y: 15}
+  - {x: 5, y: 4}
+  - {x: 5, y: 10}
+--- !u!1001 &3633581491677081774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1987390224467308285}
+    m_Modifications:
+    - target: {fileID: 4121976640549731309, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_Name
+      value: neok_wall_sign_1x15_01_LOD0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbe09c8b7ea778345a489b8eae24b2db, type: 3}
+--- !u!4 &4396209432495847760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1112224399051344382, guid: dbe09c8b7ea778345a489b8eae24b2db,
+    type: 3}
+  m_PrefabInstance: {fileID: 3633581491677081774}
+  m_PrefabAsset: {fileID: 0}
