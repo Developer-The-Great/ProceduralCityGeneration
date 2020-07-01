@@ -19,6 +19,17 @@ public class EntropismBuildingStrategy : MonoBehaviour
     const float ExpandChance = 0.5f;
     const float RoofAdChance = 0.05f;
 
+    /// <summary>
+    /// Procedurally Generates a building with the "Entropism" architectural style.
+    /// </summary>
+    /// <param name="meshChoices"> An array of GameObjects that represent the set of meshes that will be procedurally placed to create the buildings</param>
+    /// <param name="transform"> A Transform containing the position,rotation,and scale of the building</param>
+    /// <param name="BuildArea"> A BuildArea2D which states the maximum space that can be used to build the building</param>
+    /// <param name="InitShape"> </param>
+    /// <param name="seed"> an integer representing the seed that will be used to procedurally generate the building</param>
+    /// <param name="minLevel"> an integer representing the minimal number of floors that the building will have</param>
+    /// <param name="maxLevel"> an integer representing the maximum number of floors that the building will have</param>
+    /// <param name="CurrentBuildingLevel"></param>
     public static void generateEntropismBuilding(GameObject[] meshChoices, Transform transform, BuildArea2D BuildArea, 
         Shape2D InitShape, int seed, int minLevel, int maxLevel, ref int CurrentBuildingLevel)
     {
@@ -27,7 +38,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
         int BuildingHeight = Random.Range(minLevel, maxLevel + 1);
         CurrentBuildingLevel = 0;
 
-        InitializeShape2D(InitShape,  BuildArea,transform);
+        BSPDivideShape2D(InitShape,  BuildArea,transform);
 
         
 
@@ -101,7 +112,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
                 {
                     case EntropismBuildingOpt.Base:
                         AttemptShrinkSquareShape2D(transform, shape, ShapeToOriginalVertices, BuildArea);
-                        GenerateBaseLevel(shape, transform, CurrentBuildingLevel, BuildArea.perUnitMultiplier, meshChoices);
+                        GenerateBaseLevel(shape, transform,BuildArea.perUnitMultiplier, meshChoices);
                         break;
 
                     case EntropismBuildingOpt.Level:
@@ -155,8 +166,14 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
     }
 
-
-    static void GenerateBaseLevel(Shape2D shape, Transform transform, int CurrentBuildingLevel, int perUnitMultiplier, GameObject[] MeshChoices)
+    /// <summary>
+    /// Generates the base floor of the entropism styled buildings
+    /// </summary>
+    /// <param name="shape"> The initial Shape2D that indicates the initial size of the floor</param>
+    /// <param name="transform"> The Transform that will be used to dictate the position,rotation,and scale of the buildings</param>
+    /// <param name="perUnitMultiplier"> the length of the "blocks" used to create the mesh</param>
+    /// <param name="MeshChoices"> An Array of GameObjects that will be procedurally placed to create the base floor</param>
+    static void GenerateBaseLevel(Shape2D shape, Transform transform,  int perUnitMultiplier, GameObject[] MeshChoices)
     {
         if(shape.Identifier == (int)EntropismBuildingOpt.Roof)
         {
@@ -165,7 +182,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
         }
 
 
-        GameObject Level = new GameObject("BaseFloor " + CurrentBuildingLevel);
+        GameObject Level = new GameObject("BaseFloor ");
 
         Level.transform.position = new Vector3(transform.position.x, shape.vertices[0].y, transform.position.z);
         Level.transform.parent = transform;
@@ -174,8 +191,6 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
         for (int i = 0; i < shape.vertices.Length; i++)
         {
-            
-
             Vector3 Direction = Utils.GetVertexDirectionInPolygon(i, shape.vertices);
 
             //find how many units are needed to cover face
@@ -211,6 +226,13 @@ public class EntropismBuildingStrategy : MonoBehaviour
         shape.vertices = Utils.RaiseVerticesInY(shape.vertices, perUnitMultiplier);
     }
 
+    /// <summary>
+    /// Given a "Building Block type" expressed as as an EntropismBuildingMesh, randomly select a prefab from the
+    /// array of prefabs stored in MeshVersion
+    /// </summary>
+    /// <param name="meshversion"> an integer out parameter, stores the resulting index of from the meshVersion array</param>
+    /// <param name="BuildingMesh"> an EntropismBuildingMesh that states the type of building block requested (Is it a wall,window,door,etc)</param>
+    /// <param name="meshChoices"> an array of GameObjects that contain a MeshVersion component that stores the alternative prefabs that can be used</param>
     static void EntropismMeshVersionEdit(out int meshversion,EntropismBuildingMesh BuildingMesh,GameObject[] meshChoices)
     {
         if(BuildingMesh == EntropismBuildingMesh.Window)
@@ -239,6 +261,15 @@ public class EntropismBuildingStrategy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Generates the floors after the base of floor of an Entropism styled building
+    /// </summary>
+    /// <param name="shape"> The initial Shape2D that indicates the initial size of the floor </param>
+    /// <param name="transform"> The Transform that will be used to dictate the position,rotation,and scale of the buildings </param>
+    /// <param name="CurrentBuildingLevel"> an integer that reperesents which floor this floor is at (first floor,second floor,etc)</param>
+    /// <param name="MaxBuildingHeight"> an integer that the maximum floors that is allowed for this building</param>
+    /// <param name="perUnitMultiplier">the length of the "blocks" used to create the mesh</param>
+    /// <param name="MeshChoices">An Array of GameObjects that will be procedurally placed to create the base floor</param>
     static void GenerateLevel(Shape2D shape, Transform transform, int CurrentBuildingLevel, int MaxBuildingHeight, int perUnitMultiplier, GameObject[] MeshChoices)
     {
 
@@ -330,7 +361,13 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
     }
 
-    static void InitializeShape2D(Shape2D initShape,BuildArea2D BuildArea,Transform transform)
+    /// <summary>
+    /// Divides the initShape using binary space partioning and parents it to thet transform
+    /// </summary>
+    /// <param name="initShape"> The initial Shape2D that will be divided </param>
+    /// <param name="BuildArea"> A BuildArea2D that stores the inforamtion necessary to divide the Shape2D</param>
+    /// <param name="transform"> A transform that will contain the divided Shape2Ds</param>
+    static void BSPDivideShape2D(Shape2D initShape,BuildArea2D BuildArea,Transform transform)
     {
 
         initShape.Init(BuildArea.GetSquareVertices(), 0);
@@ -392,9 +429,15 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
     }
 
-
-
-
+    /// <summary>
+    /// Slices a Shape2D into 2 based on the given parameters
+    /// </summary>
+    /// <param name="shape"> the Shape2D that will be sliced </param>
+    /// <param name="isHorizontalSlice"> a boolean that indicates if the Shape2D will be sliced horizontally or vertically </param>
+    /// <param name="perUnitMultiplier"> the length of the "blocks" used to create the mesh</param>
+    /// <param name="newUnitLength"> the length/width(depending on if it was cut horizontally or vertically)of the new Shape2D</param>
+    /// <param name="transform"> the Transform that is parented to the Shape2D</param>
+    /// <param name="otherShape"> an out parameter shape2D that will store the Shape2D created after the cut</param>
     static void SliceSquareShape2D(Shape2D shape, bool isHorizontalSlice, int perUnitMultiplier, int newUnitLength,Transform transform, out Shape2D otherShape)
     {
         Vector3[] vertices = new Vector3[shape.vertices.Length];
@@ -446,6 +489,17 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Attempt to resize the Shape2D. Resizing will only happen if it passes the random number generator's check and if 
+    /// resizing will still upholding the size requirements
+    /// set for the Shape2D in question
+    /// </summary>
+    /// <param name="transform"> The Shape2D's parent transform </param>
+    /// <param name="shape"> The Shape2D that we are attempting to resize </param>
+    /// <param name="ShapeToOriginalVertices"> A Dictionary containing a Shape2D and its original vertices before resizing</param>
+    /// <param name="buildArea"> The BuildArea indicating the maximum space that this building can use</param>
+    /// <param name="expanded"> A boolean out parameter indicating whether the Shape2D was shrunk or expanded </param>
+    /// <returns></returns>
     static bool AttemptResizeSquareShape2D(Transform transform, Shape2D shape, Dictionary<Shape2D, Vector3[]> ShapeToOriginalVertices,BuildArea2D buildArea,out bool expanded)
     {
         //decide if we actually want to resize
@@ -475,6 +529,15 @@ public class EntropismBuildingStrategy : MonoBehaviour
         return isResized;
     }
 
+    /// <summary>
+    /// Attempt to shrink the Shape2D. Resizing will only happen if it passes the random number generator's check and if shrinking will still upholding the size requirements
+    /// set for the Shape2D in question
+    /// </summary>
+    /// <param name="transform"> The Shape2D's parent transform </param>
+    /// <param name="shape">The Shape2D that we are attempting to resize</param>
+    /// <param name="ShapeToOriginalVertices">  A Dictionary containing a Shape2D and its original vertices before resizing</param>
+    /// <param name="buildArea">The BuildArea indicating the maximum space that this building can use</param>
+    /// <returns> Returns true if the Shape2D was shrunk</returns>
     static bool AttemptShrinkSquareShape2D(Transform transform, Shape2D shape, Dictionary<Shape2D, Vector3[]> ShapeToOriginalVertices, BuildArea2D buildArea)
     {
         //decide if we actually want to resize
@@ -494,7 +557,13 @@ public class EntropismBuildingStrategy : MonoBehaviour
         return isResized;
     }
 
-
+    /// <summary>
+    /// Shrink the Shape2D. The amount it is shrunk is based on random number generation but still considers the requirements it needs to uphold
+    /// </summary>
+    /// <param name="shape"> The shape that will be shrunk</param>
+    /// <param name="buildArea"> The build area of the Building to be generated</param>
+    /// <param name="transform"> The Shape2D's parent transform </param>
+    /// <returns></returns>
     static bool AttemptShrink(Shape2D shape,BuildArea2D buildArea,Transform transform)
     {
         int maxShrinkWidth;
@@ -502,7 +571,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
 
         bool isResized = false;
 
-        GetShapeResizeTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
+        GetShapeShrinkTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
 
         if (maxShrinkWidth > 0)
         {
@@ -511,7 +580,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
             if (resize > 0) { isResized = true; }
         }
 
-        GetShapeResizeTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
+        GetShapeShrinkTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
 
         if (maxShrinkWidth > 0)
         {
@@ -520,7 +589,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
             if (resize > 0) { isResized = true; }
         }
 
-        GetShapeResizeTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
+        GetShapeShrinkTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
 
         if (maxShrinkBreadth > 0)
         {
@@ -529,7 +598,7 @@ public class EntropismBuildingStrategy : MonoBehaviour
             if (resize > 0) { isResized = true; }
         }
 
-        GetShapeResizeTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
+        GetShapeShrinkTolerance(shape, buildArea.perUnitMultiplier, out maxShrinkWidth, out maxShrinkBreadth);
 
         if (maxShrinkBreadth > 0)
         {
@@ -541,6 +610,14 @@ public class EntropismBuildingStrategy : MonoBehaviour
         return isResized;
     }
 
+    /// <summary>
+    /// Expands the Shape2D. The amount it is expanded is based on random number generation but still considers the requirements it needs to uphold
+    /// </summary>
+    /// <param name="shape">The shape that will be expanded</param>
+    /// <param name="buildArea">The build area of the Building to be generated </param>
+    /// <param name="transform">The Shape2D's parent transform </param>
+    /// <param name="ShapeToOriginalVertices">A Dictionary containing a Shape2D and its original vertices before resizing</param>
+    /// <returns></returns>
     static bool AttemptExpand(Shape2D shape, BuildArea2D buildArea,Transform transform, Dictionary<Shape2D, Vector3[]> ShapeToOriginalVertices)
     {
         int maxExpandWidth;
@@ -588,7 +665,14 @@ public class EntropismBuildingStrategy : MonoBehaviour
         return isResized;
     }
 
-    static void GetShapeResizeTolerance(Shape2D shape, int perUnitMultiplier, out int maxShrinkWidth,out int maxShrinkBreadth)
+    /// <summary>
+    /// Find the maximum shrink size that a certain shape can have
+    /// </summary>
+    /// <param name="shape"> The Shape2D that we are examining </param>
+    /// <param name="perUnitMultiplier"> </param>
+    /// <param name="maxShrinkWidth"> an out parameter that will store the maximum width that the Shape2D can shrink to</param>
+    /// <param name="maxShrinkBreadth">an out parameter that will store the maximum breadth that the Shape2D can shrink to</param>
+    static void GetShapeShrinkTolerance(Shape2D shape, int perUnitMultiplier, out int maxShrinkWidth,out int maxShrinkBreadth)
     {
         int currentWidth = Utils.GetPerUnitLength(shape.vertices[0], shape.vertices[1], perUnitMultiplier);
         int currentBreadth = Utils.GetPerUnitLength(shape.vertices[0], shape.vertices[3], perUnitMultiplier);
@@ -597,6 +681,16 @@ public class EntropismBuildingStrategy : MonoBehaviour
         maxShrinkBreadth = currentBreadth - minBreadth;
     }
 
+    /// <summary>
+    /// Find the maximum expand size that a certain shape can have
+    /// </summary>
+    /// <param name="shape">The Shape2D that we are examining </param>
+    /// <param name="perUnitMultiplier"></param>
+    /// <param name="ExpandWidth">an out parameter that will store the maximum width that the Shape2D can expand to</param>
+    /// <param name="ExpandBreadth">an out parameter that will store the maximum breadth that the Shape2D can expand to</param>
+    /// <param name="ShapeToOriginalVertices">A Dictionary containing a Shape2D and its original vertices before resizing</param>
+    /// <param name="direction"> The direction we are expanding towards</param>
+    /// <param name="transform"> The Shape2D's parent transform </param>
     static void GetShapeExpandTolerance(Shape2D shape, int perUnitMultiplier, out int ExpandWidth, out int ExpandBreadth, Dictionary<Shape2D, Vector3[]> ShapeToOriginalVertices,Directions direction,Transform transform)
     {
         int currentWidth = Utils.GetPerUnitLength(shape.vertices[0], shape.vertices[1], perUnitMultiplier);
